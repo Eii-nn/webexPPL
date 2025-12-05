@@ -34,19 +34,6 @@ int is_https(const char *url) {
     return strncmp(url, "https://", 8) == 0;
 }
 
-// Function to check for basic malicious keywords in response (simplified safety check)
-int has_malicious_content(const char *response) {
-    const char *keywords[] = {"malware", "phishing", "virus", "trojan"};
-    int num_keywords = sizeof(keywords) / sizeof(keywords[0]);
-    
-    for (int i = 0; i < num_keywords; i++) {
-        if (strstr(response, keywords[i]) != NULL) {
-            return 1; // Found potential malicious content
-        }
-    }
-    return 0;
-}
-
 int main(int argc, char *argv[]) {
     if (argc != 2) {
         printf("Usage: %s <URL>\n", argv[0]);
