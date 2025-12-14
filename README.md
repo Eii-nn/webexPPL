@@ -5,9 +5,9 @@ A Website Safety and Performance Checker
 
 # The Machine Problem
 <ol type="A">
-<li>The Problem Statement – Define the problem here. Make sure that I/O is clear</li>
+<li>The Problem Statement</li>
 <br>
-<li>Solutions – Copy and paste all source code for every program here</li>
+<li>Solutions</li>
     <ol>
         <li>Imperative Paradigm Solution</li>
         <li>Object-Oriented Paradigm Solution</li>
