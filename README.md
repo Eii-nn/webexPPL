@@ -6,7 +6,7 @@ A Website Safety and Performance Checker
 # The Machine Problem
 <ol type="A">
 <li>The Problem Statement – Define the problem here. Make sure that I/O is clear</li>
-
+<br>
 <li>Solutions – Copy and paste all source code for every program here</li>
     <ol>
         <li>Imperative Paradigm Solution</li>
@@ -17,15 +17,16 @@ A Website Safety and Performance Checker
 </ol>
 
 # Language Definition
-A. Syntax
-    <br>a. BNF from basic syntax until control structures
-
-B. Semantics
-    <br>a. Informal Semantics (in lieu with each BNF)
-        <br>1. Basic Syntax
-        <br>2. Control Structures
-        <br>3. Data Types
-        <br>4. Subprograms
+<ol type="A">
+    <li>Syntax</li>
+        a. BNF from basic syntax until control structures
+    <li>Semantics</li>
+        a. Informal Semantics (in lieu with each BNF)
+            <br>1. Basic Syntax
+            <br>2. Control Structures
+            <br>3. Data Types
+            <br>4. Subprograms
+        </ol>
 
 # Evaluation of the programming languages (in your own ideas, evaluate these programming
 languages according to the criteria for evaluating them. You may emphasize their strengths
