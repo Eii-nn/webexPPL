@@ -27,24 +27,13 @@
       "SAFE (HTTPS - Encrypted)"
       "NOT SAFE (HTTP - Unencrypted)"))
 
-;; Function: Measure access time (functional wrapper around system call)
+;; Function: Measure access time using system call
 (defun measure-access-time (url)
   (let ((start-time (get-internal-real-time)))
     (handler-case
-        ;; Use shell command to measure HTTP request time
-        (let* ((command (format nil "timeout 10 curl -s -o /dev/null -w '%%{http_code}' --head ~A 2>&1 || echo '000'" url))
+        (let* ((command (format nil "curl -s -o /dev/null -w '%%{http_code}' --max-time 10 --head ~A 2>&1 || echo '000'" url))
                (output (with-output-to-string (stream)
-                         #+clisp (ext:shell command)
-                         #+sbcl (sb-ext:run-program "/bin/sh" 
-                                                    (list "-c" command)
-                                                    :output stream
-                                                    :wait t)
-                         #+clozure (ccl:run-program "/bin/sh"
-                                                    (list "-c" command)
-                                                    :output stream
-                                                    :wait t)
-                         #-(or clisp sbcl clozure) 
-                         (format stream "000"))))
+                         (ext:shell command))))
           (let ((end-time (get-internal-real-time))
                 (success (and (> (length output) 0)
                               (not (search "000" output))
@@ -89,7 +78,7 @@
 ;; Function composition: Main entry point
 (defun main (args)
   (if (null args)
-      (format t "Usage: lisp main.ls <url1> [url2] ...~%")
+      (format t "Usage: clisp main.ls <url1> [url2] ...~%")
       (process-urls args)))
 
 ;; Entry point - functional style
