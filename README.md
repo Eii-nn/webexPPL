@@ -18,15 +18,18 @@ A Website Safety and Performance Checker
 
 # Language Definition
 <ol type="A">
-    <li>Syntax</li>
-        a. BNF from basic syntax until control structures
-    <li>Semantics</li>
-        a. Informal Semantics (in lieu with each BNF)
-            <br>1. Basic Syntax
-            <br>2. Control Structures
-            <br>3. Data Types
-            <br>4. Subprograms
+<li>Syntax</li>
+    a. BNF from basic syntax until control structures
+
+<li>Semantics</li>
+    a. Informal Semantics (in lieu with each BNF)
+        <ol>
+        <li>Basic Syntax</li>
+        <li>Control Structures</li>
+        <li>Data Types</li>
+        <li>Subprograms</li>
         </ol>
+    </ol>
 
 # Evaluation of the programming languages (in your own ideas, evaluate these programming
 languages according to the criteria for evaluating them. You may emphasize their strengths
