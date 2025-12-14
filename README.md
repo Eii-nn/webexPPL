@@ -7,21 +7,21 @@ A Website Safety and Performance Checker
 A. The Problem Statement – Define the problem here. Make sure that I/O is clear
 
 B. Solutions – Copy and paste all source code for every program here
-    a. Imperative Paradigm Solution
-    b. Object-Oriented Paradigm Solution
-    c. Logic Paradigm Solution
-    d. Functional Paradigm Solution
+    <br>a. Imperative Paradigm Solution
+    <br>b. Object-Oriented Paradigm Solution
+    <br>c. Logic Paradigm Solution
+    <br>d. Functional Paradigm Solution
 
 # Language Definition
 A. Syntax
-    a. BNF from basic syntax until control structures
+    <br>a. BNF from basic syntax until control structures
 
 B. Semantics
-    a. Informal Semantics (in lieu with each BNF)
-        1. Basic Syntax
-        2. Control Structures
-        3. Data Types
-        4. Subprograms
+    <br>a. Informal Semantics (in lieu with each BNF)
+        <br>1. Basic Syntax
+        <br>2. Control Structures
+        <br>3. Data Types
+        <br>4. Subprograms
 
 # Evaluation of the programming languages (in your own ideas, evaluate these programming
 languages according to the criteria for evaluating them. You may emphasize their strengths
