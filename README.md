@@ -22,7 +22,7 @@ A Website Safety and Performance Checker
     a. BNF from basic syntax until control structures
 <br><br>
 <li>Semantics</li>
-    a. Informal Semantics (in lieu with each BNF)
+    a. Informal Semantics
         <ol>
         <li>Basic Syntax</li>
         <li>Control Structures</li>
@@ -31,16 +31,14 @@ A Website Safety and Performance Checker
         </ol>
     </ol>
 
-# Evaluation of the programming languages (in your own ideas, evaluate these programming
-languages according to the criteria for evaluating them. You may emphasize their strengths
-and drawbacks)
+# Evaluation of the programming languages
 
-# Concluding Statements (you may write a generalization of your research)
+# Concluding Statements
 
-# Bibliographic Sources (list of all reliable sources of your research)
+# Bibliographic Sources
 
 # Appendices
 <ol type="A">
-<li>Screenshots (show sample run of your programs)</li>
-<li>Photo documentation (photos of members working on the project)</li>
+<li>Screenshots</li>
+<li>Photo documentation</li>
 </ol>
