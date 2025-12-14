@@ -4,107 +4,96 @@
 #include <time.h>
 #include <curl/curl.h>
 
-// Structure to hold response data
-struct MemoryStruct {
-    char *memory;
-    size_t size;
-};
-
-// Callback function to write data from curl
-static size_t WriteMemoryCallback(void *contents, size_t size, size_t nmemb, void *userp) {
-    size_t realsize = size * nmemb;
-    struct MemoryStruct *mem = (struct MemoryStruct *)userp;
-    
-    char *ptr = realloc(mem->memory, mem->size + realsize + 1);
-    if (ptr == NULL) {
-        printf("Not enough memory (realloc returned NULL)\n");
-        return 0;
-    }
-    
-    mem->memory = ptr;
-    memcpy(&(mem->memory[mem->size]), contents, realsize);
-    mem->size += realsize;
-    mem->memory[mem->size] = 0;
-    
-    return realsize;
-}
-
-// Function to check if URL is HTTPS (basic safety check)
-int is_https(const char *url) {
-    return strncmp(url, "https://", 8) == 0;
+// Callback function to write response data
+size_t write_callback(void *contents, size_t size, size_t nmemb, void *userp) {
+    (void)contents;
+    (void)userp;
+    return size * nmemb;
 }
 
 int main(int argc, char *argv[]) {
-    if (argc != 2) {
-        printf("Usage: %s <URL>\n", argv[0]);
+    // Initialize variables
+    CURL *curl;
+    CURLcode res;
+    int i;
+    int is_http;
+    int is_https;
+    clock_t start;
+    clock_t end;
+    double access_time;
+    
+    // Check if URL provided
+    if (argc < 2) {
+        printf("Usage: %s <url1> [url2] ...\n", argv[0]);
         return 1;
     }
     
-    const char *url = argv[1];
-    CURL *curl;
-    CURLcode res;
-    struct MemoryStruct chunk;
-    chunk.memory = malloc(1);
-    chunk.size = 0;
-    
-    clock_t start, end;
-    double cpu_time_used;
-    
     // Initialize curl
-    curl = curl_easy_init();
-    if (curl) {
-        // Set URL
-        curl_easy_setopt(curl, CURLOPT_URL, url);
+    curl_global_init(CURL_GLOBAL_DEFAULT);
+    
+    // Process each URL
+    i = 1;
+    while (i < argc) {
+        // Check if URL starts with http://
+        is_http = (strncmp(argv[i], "http://", 7) == 0);
         
-        // Follow redirects
-        curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L);
+        // Check if URL starts with https://
+        is_https = (strncmp(argv[i], "https://", 8) == 0);
         
-        // Set write callback
-        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteMemoryCallback);
-        curl_easy_setopt(curl, CURLOPT_WRITEDATA, (void *)&chunk);
+        // Validate protocol
+        if (!is_http && !is_https) {
+            printf("%s: Invalid URL (must start with http:// or https://)\n", argv[i]);
+            i = i + 1;
+            continue;
+        }
         
-        // Start timing
+        // Function 1: Validate HTTP/HTTPS (Safe or Not)
+        printf("\nURL: %s\n", argv[i]);
+        if (is_https) {
+            printf("Status: SAFE (HTTPS - Encrypted)\n");
+        } else {
+            printf("Status: NOT SAFE (HTTP - Unencrypted)\n");
+        }
+        
+        // Initialize curl handle
+        curl = curl_easy_init();
+        if (!curl) {
+            fprintf(stderr, "Error: Failed to initialize curl\n");
+            i = i + 1;
+            continue;
+        }
+        
+        // Function 2: Measure access time
         start = clock();
         
-        // Perform the request
+        // Configure curl
+        curl_easy_setopt(curl, CURLOPT_URL, argv[i]);
+        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_callback);
+        curl_easy_setopt(curl, CURLOPT_NOBODY, 1L);
+        curl_easy_setopt(curl, CURLOPT_TIMEOUT, 10L);
+        curl_easy_setopt(curl, CURLOPT_CONNECTTIMEOUT, 5L);
+        
+        // Perform request
         res = curl_easy_perform(curl);
         
-        // End timing
         end = clock();
-        cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+        access_time = ((double)(end - start)) / CLOCKS_PER_SEC;
         
-        if (res != CURLE_OK) {
-            fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
+        // Display access time
+        if (res == CURLE_OK) {
+            printf("Access Time: %.3f seconds\n", access_time);
         } else {
-            // Performance check: Response time
-            printf("Performance Check:\n");
-            printf("Response time: %.2f seconds\n", cpu_time_used);
-            
-            // Basic safety checks
-            printf("\nSafety Check:\n");
-            if (is_https(url)) {
-                printf("Uses HTTPS: Yes\n");
-            } else {
-                printf("Uses HTTPS: No (Warning: Not secure)\n");
-            }
-            
-            if (has_malicious_content(chunk.memory)) {
-                printf("Potential malicious content detected: Yes (Warning)\n");
-            } else {
-                printf("Potential malicious content detected: No\n");
-            }
-            
-            // Get HTTP response code
-            long response_code;
-            curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &response_code);
-            printf("HTTP Status Code: %ld\n", response_code);
+            printf("Access Time: %.3f seconds (Failed: %s)\n", access_time, curl_easy_strerror(res));
         }
         
         // Cleanup
         curl_easy_cleanup(curl);
+        
+        i = i + 1;
     }
     
-    free(chunk.memory);
+    // Cleanup curl
+    curl_global_cleanup();
+    
     return 0;
 }
-
