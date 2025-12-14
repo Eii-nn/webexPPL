@@ -4,13 +4,17 @@
 A Website Safety and Performance Checker
 
 # The Machine Problem
-A. The Problem Statement – Define the problem here. Make sure that I/O is clear
+<ol type="A">
+<li>The Problem Statement – Define the problem here. Make sure that I/O is clear</li>
 
-B. Solutions – Copy and paste all source code for every program here
-    <br>a. Imperative Paradigm Solution
-    <br>b. Object-Oriented Paradigm Solution
-    <br>c. Logic Paradigm Solution
-    <br>d. Functional Paradigm Solution
+<li>Solutions – Copy and paste all source code for every program here</li>
+    <ol type="a">
+        <li>Imperative Paradigm Solution</li>
+        <li>Object-Oriented Paradigm Solution</li>
+        <li>Logic Paradigm Solution</li>
+        <li>Functional Paradigm Solution</li>
+        </ol>
+</ol>
 
 # Language Definition
 A. Syntax
