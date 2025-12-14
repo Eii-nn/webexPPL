@@ -40,5 +40,7 @@ and drawbacks)
 # Bibliographic Sources (list of all reliable sources of your research)
 
 # Appendices
-A. Screenshots (show sample run of your programs)
-B. Photo documentation (photos of members working on the project)
+<ol type="A">
+<li>Screenshots (show sample run of your programs)</li>
+<li>Photo documentation (photos of members working on the project)</li>
+</ol>
