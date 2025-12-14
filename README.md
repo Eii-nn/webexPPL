@@ -20,7 +20,7 @@ A Website Safety and Performance Checker
 <ol type="A">
 <li>Syntax</li>
     a. BNF from basic syntax until control structures
-<br>
+<br><br>
 <li>Semantics</li>
     a. Informal Semantics (in lieu with each BNF)
         <ol>
