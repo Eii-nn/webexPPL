@@ -8,7 +8,7 @@ A Website Safety and Performance Checker
 <li>The Problem Statement – Define the problem here. Make sure that I/O is clear</li>
 
 <li>Solutions – Copy and paste all source code for every program here</li>
-    <ol type="a">
+    <ol>
         <li>Imperative Paradigm Solution</li>
         <li>Object-Oriented Paradigm Solution</li>
         <li>Logic Paradigm Solution</li>
