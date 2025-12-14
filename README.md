@@ -13,7 +13,7 @@ A Website Safety and Performance Checker
         <li>Object-Oriented Paradigm Solution</li>
         <li>Logic Paradigm Solution</li>
         <li>Functional Paradigm Solution</li>
-        </ol>
+    </ol>
 </ol>
 
 # Language Definition
