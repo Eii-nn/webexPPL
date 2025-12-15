@@ -57,4 +57,5 @@ A Website Safety and Performance Checker
         <li>Functional Paradigm </li>
     </ol>
 <li>Photo documentation</li>
+    <img src="images/group.jpg" alt="group photo">
 </ol>
