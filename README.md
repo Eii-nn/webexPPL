@@ -20,7 +20,13 @@ A Website Safety and Performance Checker
         </a>
         </li>
         <li>Logic Paradigm Solution</li>
+         <a href="https://github.com/Eii-nn/webexPPL/blob/5cfe241b260e66dcbbd2c6fa77f783a6b3297419/prolog/Logic-Paradigm.pl">
+          Prolog file
+        </a>
         <li>Functional Paradigm Solution</li>
+         <a href="https://github.com/Eii-nn/webexPPL/blob/5cfe241b260e66dcbbd2c6fa77f783a6b3297419/haskell/website_checker.hs">
+          Haskell file
+        </a>
     </ol>
 </ol>
 
@@ -54,6 +60,7 @@ A Website Safety and Performance Checker
         <li>Object-Oriented Paradigm </li>
         <img src="images/python.png" alt="python program result">
         <li>Logic Paradigm </li>
+        <img src="images/prolog.png" alt="prolog program result">
         <li>Functional Paradigm </li>
     </ol>
 <li>Photo documentation</li>
