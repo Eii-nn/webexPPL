@@ -40,5 +40,13 @@ A Website Safety and Performance Checker
 # Appendices
 <ol type="A">
 <li>Screenshots</li>
+    <ol>
+        <li>Imperative Paradigm</li>
+        <img src="images/c.png" alt="c program result">
+        <li>Object-Oriented Paradigm </li>
+        <img src="images/python.png" alt="python program result">
+        <li>Logic Paradigm </li>
+        <li>Functional Paradigm </li>
+    </ol>
 <li>Photo documentation</li>
 </ol>
