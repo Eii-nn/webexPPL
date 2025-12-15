@@ -9,8 +9,16 @@ A Website Safety and Performance Checker
 <br>
 <li>Solutions</li>
     <ol>
-        <li>Imperative Paradigm Solution</li>
-        <li>Object-Oriented Paradigm Solution</li>
+        <li>Imperative Paradigm Solution<br>
+            <a href="https://github.com/Eii-nn/webexPPL/blob/5cfe241b260e66dcbbd2c6fa77f783a6b3297419/c/main.c">
+          C file
+        </a>
+        </li>
+        <li>Object-Oriented Paradigm Solution<br>
+            <a href="https://github.com/Eii-nn/webexPPL/blob/5cfe241b260e66dcbbd2c6fa77f783a6b3297419/python/OOP-Paradigm.py">
+          Python file
+        </a>
+        </li>
         <li>Logic Paradigm Solution</li>
         <li>Functional Paradigm Solution</li>
     </ol>
