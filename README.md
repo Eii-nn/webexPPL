@@ -20,11 +20,11 @@ A Website Safety and Performance Checker
         </a>
         </li>
         <li>Logic Paradigm Solution</li>
-         <a href="https://github.com/Eii-nn/webexPPL/blob/5cfe241b260e66dcbbd2c6fa77f783a6b3297419/prolog/Logic-Paradigm.pl">
+         <a href="https://github.com/Eii-nn/webexPPL/blob/b99781407ad49251925e3859ae43d62e812e194a/prolog/Logic-Paradigm.pl">
           Prolog file
         </a>
         <li>Functional Paradigm Solution</li>
-         <a href="https://github.com/Eii-nn/webexPPL/blob/5cfe241b260e66dcbbd2c6fa77f783a6b3297419/haskell/website_checker.hs">
+         <a href="https://github.com/Eii-nn/webexPPL/blob/b99781407ad49251925e3859ae43d62e812e194a/haskell/website_checker.hs">
           Haskell file
         </a>
     </ol>
